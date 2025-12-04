@@ -1,6 +1,7 @@
 package h2;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class H2_main {
     public static void main(String[] args) {
@@ -14,11 +15,7 @@ public class H2_main {
             return Arrays.copyOf(a, a.length);
         }else if (end > start && Arrays.compare(a, b) == 0) {
             Arrays.sort(a);
-            int[] c = new int[end - start];
-            for (int i = 0; i < end - start; i++) {
-                c[i] = a[i + start];
-            }
-            return c;
+            return Arrays.copyOfRange(a,start,end);
         }
             return new int[]{};
     }
